@@ -8,8 +8,7 @@ public class Lancero extends Unidad {
 
 	@Override
 	protected int hacerDanio() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 25;
 	}
 
 	@Override
