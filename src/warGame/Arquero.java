@@ -1,15 +1,14 @@
 package warGame;
 
-public class Soldado extends Unidad {
+public class Arquero extends Unidad {
 
-	int energia;
+	int flechas;
 	
-	public Soldado() {
-		energia=100;
+	public Arquero() {
+		flechas=20;
 	}
 	
-	@Override
-	public void tomarAgua() {
+	public void cargarFlechas() {
 		
 	}
 	
