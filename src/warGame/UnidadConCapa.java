@@ -3,7 +3,7 @@ package warGame;
 public class UnidadConCapa extends UnidadConItem {
 
 	public UnidadConCapa(Unidad unidad) {
-		
+	
 	}
 	
 	@Override
@@ -17,7 +17,7 @@ public class UnidadConCapa extends UnidadConItem {
 	}
 	
 	@Override
-	protected boolean puedeAtacar() {
+	protected boolean puedeAtacar(Unidad that) {
 		// TODO Auto-generated method stub
 		return false;
 	}
