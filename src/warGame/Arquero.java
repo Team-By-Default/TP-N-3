@@ -11,17 +11,17 @@ public class Arquero extends Unidad {
 	public void cargarFlechas() {
 		
 	}
-	
-	@Override
-	protected boolean puedeAtacar() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	protected int hacerDanio() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	protected boolean puedeAtacar(Unidad that) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

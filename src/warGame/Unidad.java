@@ -9,7 +9,7 @@ public abstract class Unidad {
 	public void atacar(Unidad that) {
 		
 	}
-	protected abstract boolean puedeAtacar();
+	protected abstract boolean puedeAtacar(Unidad that);
 	protected abstract int hacerDanio();
 	protected void recibirDanio(int danio) {
 		
