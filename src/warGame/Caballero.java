@@ -22,6 +22,7 @@ public class Caballero extends Unidad {
 	public Caballero() {
 		this.caballoNoRebelde=3;
 		this.salud = SALUDTOPE;
+		this.danio = DANIO;
 	}
 	
 	/*
@@ -31,15 +32,6 @@ public class Caballero extends Unidad {
 	@Override
 	public void tomarAgua() {
 		this.caballoNoRebelde=3;
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 * @see warGame.Unidad#hacerDanio()
-	 */
-	@Override
-	protected int hacerDanio() {
-		return DANIO;
 	}
 	
 	/*
