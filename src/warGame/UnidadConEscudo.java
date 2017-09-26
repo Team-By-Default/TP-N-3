@@ -3,7 +3,7 @@ package warGame;
 public class UnidadConEscudo extends UnidadConItem {
 
 	public UnidadConEscudo(Unidad unidad) {
-		super.unidad=unidad;
+		super.miUnidad=unidad;
 	}
 	
 	@Override
