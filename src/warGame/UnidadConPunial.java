@@ -17,7 +17,7 @@ public class UnidadConPunial extends UnidadConItem {
 	}
 	
 	@Override
-	protected boolean puedeAtacar() {
+	protected boolean puedeAtacar(Unidad that) {
 		// TODO Auto-generated method stub
 		return false;
 	}

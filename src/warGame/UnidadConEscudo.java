@@ -7,7 +7,7 @@ public class UnidadConEscudo extends UnidadConItem {
 	}
 	
 	@Override
-	protected boolean puedeAtacar() {
+	protected boolean puedeAtacar(Unidad That) {
 		// TODO Auto-generated method stub
 		return false;
 	}
