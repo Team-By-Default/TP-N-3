@@ -7,7 +7,7 @@ public class Soldado extends Unidad {
 	public Soldado() {
 		energia=100;
 		super.danio=10;
-		
+		super.salud=200;
 	}
 	
 	@Override
