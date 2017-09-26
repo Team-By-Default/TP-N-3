@@ -13,10 +13,10 @@ public abstract class Unidad {
 	}
 	protected abstract boolean puedeAtacar(Unidad that);
 	protected int hacerDanio() {
-		return salud;
+		return danio;
 	}
 	protected void recibirDanio(int danio) {
-		
+		this.salud-=danio;
 	}
 	protected double distanciaA(Unidad that) {
 		return Math.sqrt(Math.pow(this.posicionX-that.posicionX,2)+Math.pow(this.posicionY-that.posicionY,2));	
