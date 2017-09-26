@@ -1,7 +1,7 @@
 package warGame;
 
 /**
- * 
+ * La unidad basica, representa a todas las unidades, incluida UnidadConItem
  * @author alexis
  * @param salud Es la salud total de la unidad
  * @param danio Es el daño que hace la clase por defecto
