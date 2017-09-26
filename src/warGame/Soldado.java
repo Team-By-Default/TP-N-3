@@ -6,23 +6,21 @@ public class Soldado extends Unidad {
 	
 	public Soldado() {
 		energia=100;
+		super.danio=10;
+		
 	}
 	
 	@Override
 	public void tomarAgua() {
-		
-	}
-	
-
-	@Override
-	protected int hacerDanio() {
-		// TODO Auto-generated method stub
-		return 0;
+		energia=100;
 	}
 
 	@Override
 	protected boolean puedeAtacar(Unidad that) {
-		// TODO Auto-generated method stub
+		if(energia>=10) {
+			energia-=10;
+			return true;
+		}
 		return false;
 	}
 

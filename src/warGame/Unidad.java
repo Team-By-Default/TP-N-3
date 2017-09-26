@@ -3,6 +3,7 @@ package warGame;
 public abstract class Unidad {
 
 	protected int salud;
+	protected int danio;
 	private int posicionX;
 	private int posicionY;
 	
@@ -10,7 +11,9 @@ public abstract class Unidad {
 		
 	}
 	protected abstract boolean puedeAtacar(Unidad that);
-	protected abstract int hacerDanio();
+	protected int hacerDanio() {
+		return salud;
+	}
 	protected void recibirDanio(int danio) {
 		
 	}
@@ -18,9 +21,11 @@ public abstract class Unidad {
 		return 0;	
 	}
 	public void tomarAgua() {
-		
+		return;
 	}
 	public boolean estaVivo() {
-		return true;
+		if(this.salud>0)
+			return true;
+		return false;
 	}
 }
