@@ -21,6 +21,8 @@ public abstract class Unidad {
 		
 	}
 	public boolean estaVivo() {
-		return true;
+		if(this.salud > 0)
+			return true;
+		return false;
 	}
 }
