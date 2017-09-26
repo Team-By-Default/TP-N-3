@@ -15,7 +15,7 @@ public abstract class Unidad {
 		
 	}
 	protected double distanciaA(Unidad that) {
-		return 0;	
+		return Math.sqrt(Math.pow(this.posicionX-that.posicionX,2)+Math.pow(this.posicionY-that.posicionY,2));	
 	}
 	public void tomarAgua() {
 		

@@ -3,6 +3,7 @@ package warGame;
 public class Lancero extends Unidad {
 
 	public Lancero() {
+		this.salud=150;
 	}
 
 	@Override
@@ -13,7 +14,8 @@ public class Lancero extends Unidad {
 
 	@Override
 	protected boolean puedeAtacar(Unidad that) {
-		// TODO Auto-generated method stub
+		if(this.distanciaA(that)>1 && this.distanciaA(that)<3)
+			return true;
 		return false;
 	}
 
