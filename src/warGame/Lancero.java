@@ -1,14 +1,18 @@
 package warGame;
 
 public class Lancero extends Unidad {
+	
+	private final static int SALUDTOPE = 150;
+	private final static int DANIO = 25;
 
 	public Lancero() {
-		this.salud=150;
+		this.salud=SALUDTOPE;
+		this.danio=DANIO;
 	}
 
 	@Override
 	protected int hacerDanio() {
-		return 25;
+		return this.danio;
 	}
 
 	@Override
