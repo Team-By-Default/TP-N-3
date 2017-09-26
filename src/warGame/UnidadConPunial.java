@@ -2,30 +2,27 @@ package warGame;
 
 public class UnidadConPunial extends UnidadConItem {
 
-	public UnidadConPunial() {
-		
+	public UnidadConPunial(Unidad unidad) {
+		this.miUnidad = unidad;
 	}
-	
-	@Override
-	public void atacar(Unidad that) {
-		
-	}
-	
+	/*
+	 * El punial reduce la defensa en 3 puntos
+	 */
 	@Override
 	public void recibirDanio(int danio) {
-		
+		this.miUnidad.recibirDanio(danio+3);
 	}
 	
 	@Override
 	protected boolean puedeAtacar(Unidad that) {
-		// TODO Auto-generated method stub
-		return false;
+		return this.miUnidad.puedeAtacar(that);
 	}
-
+	/*
+	 * El punial aumenta la fuerza de los ataques en 3 puntos
+	 */
 	@Override
 	protected int hacerDanio() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.miUnidad.hacerDanio()+3;
 	}
 
 }
