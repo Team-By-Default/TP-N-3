@@ -7,7 +7,8 @@ public abstract class Unidad {
 	private int posicionY;
 	
 	public void atacar(Unidad that) {
-		
+		if(this.puedeAtacar(that))
+			that.recibirDanio(this.hacerDanio());
 	}
 	protected abstract boolean puedeAtacar(Unidad that);
 	protected abstract int hacerDanio();
