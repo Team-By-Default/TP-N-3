@@ -7,7 +7,7 @@ public class Soldado extends Unidad {
 	public Soldado() {
 		energia=100;
 		super.danio=10;
-		
+		super.salud=200;
 	}
 	
 	@Override
@@ -17,7 +17,7 @@ public class Soldado extends Unidad {
 
 	@Override
 	protected boolean puedeAtacar(Unidad that) {
-		if(energia>=10) {
+		if(energia>=10&&this.distanciaA(that)<2) {
 			energia-=10;
 			return true;
 		}
