@@ -26,11 +26,71 @@ public class CaballeroTest {
 		Assert.assertEquals( true, jose.estaVivo());
 	}
 	
+	/**
+	 * Test que muestra que ambos Caballeros
+	 * realizan 50 puntos de daño, sin items
+	 * y que reciben 50 puntos de daños,
+	 * sin items
+	 * Ademas, testeamos que ambos sigan vivos
+	 */
+	@Test
+	public void testeandoDanio() {
+		jose.atacar(pepe);
+		Assert.assertEquals(150, pepe.getSalud(),0);
+		pepe.atacar(jose);
+		Assert.assertEquals(150, jose.getSalud(),0);
+		Assert.assertEquals(true, jose.estaVivo()&&pepe.estaVivo());
+	}
+	
+	/**
+	 * Test que muestra que, al quedar 
+	 * un Caballero con 0 puntos de
+	 * vida, este está muerto
+	 */
+	@Test
+	public void testeandoMuerte() {
+		jose.atacar(pepe);
+		jose.atacar(pepe);
+		jose.atacar(pepe);
+		jose.atacar(pepe);
+		Assert.assertEquals(0, pepe.getSalud(),0);
+		Assert.assertEquals(false, pepe.estaVivo());
+	}
+	
+	/**
+	 * Teste que muestra que el Caballero no
+	 * puede atacar por la distancia
+	 */
+	public void testeandoDistancia() {
+		Assert.assertEquals( false, jose.atacar(lejano));
+	}
+	
+	/**
+	 * Test que muestra que un Caballero 
+	 * que es atacado 3 veces por una unidad
+	 * no puede atacar
+	 */
 	@Test
 	public void testeandoCaballoRebelde() {
-		Assert.assertEquals( true, pepe.atacar(jose));
-		Assert.assertEquals( true, pepe.atacar(jose));
-		Assert.assertEquals( true, pepe.atacar(jose));
-		Assert.assertEquals( false, jose.atacar(pepe));//
+		pepe.atacar(jose);
+		pepe.atacar(jose);
+		pepe.atacar(jose);
+		Assert.assertEquals( false, jose.atacar(pepe));
 	}
+	/**
+	 * Test que muestra que tras no poder atacar
+	 * un Caballero que toma agua(su caballo)
+	 * puede volver a atacar
+	 */
+	@Test
+	public void testeandoCaballoRebeldeRecuperado() {
+		pepe.atacar(jose);
+		pepe.atacar(jose);
+		pepe.atacar(jose);
+		Assert.assertEquals( false, jose.atacar(pepe));
+		jose.tomarAgua();
+		Assert.assertEquals( true, jose.atacar(pepe));
+	}
+	
+	
 }
