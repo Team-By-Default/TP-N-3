@@ -5,6 +5,9 @@ import org.junit.Test;
 
 public class SoldadoTest {
 
+	/**
+	 * Buscamos ver si los atributos fueron bien colocados
+	 */
 	@Test
 	public void testeandoAtributos() {
 		Soldado jose = new Soldado ();
@@ -54,12 +57,12 @@ public class SoldadoTest {
 	public void testeandoRecibirDanio() {
 		Soldado jose = new Soldado ();
 		Soldado ronaldo = new Soldado ();
-		
+
 		for(int i = 0; i < 10; i++) {
 			Assert.assertEquals( true, jose.estaVivo());
 			ronaldo.atacar(jose);
 		}
-		
+
 		ronaldo.tomarAgua();
 		
 		for(int i = 0; i < 10; i++) {

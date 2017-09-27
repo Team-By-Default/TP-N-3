@@ -5,6 +5,9 @@ import org.junit.Test;
 
 public class CaballeroTest {
 	
+	/**
+	 * Buscamos ver si los atributos fueron bien colocados
+	 */
 	@Test
 	public void testeandoAtributos() {
 		Caballero jose = new Caballero ();
@@ -14,10 +17,26 @@ public class CaballeroTest {
 		Assert.assertEquals( 3, jose.getCaballoNoRebelde(), 0);
 	}
 	
+	/**
+	 * Buscamos ver los limites de la salud del caballero
+	 */
 	@Test
-	public void testeandoHacerDanio() {
+	public void testeandoRecibirDanio() {
 		Caballero jose = new Caballero ();
+		Soldado ronaldo = new Soldado ();
 		
-		Assert.assertEquals( 50, jose.hacerDanio(), 0);
+		for(int i = 0; i < 10; i++) {
+			Assert.assertEquals( true, jose.estaVivo());
+			ronaldo.atacar(jose);
+		}
+
+		ronaldo.tomarAgua();
+		
+		for(int i = 0; i < 10; i++) {
+			Assert.assertEquals( true, jose.estaVivo());
+			ronaldo.atacar(jose);
+		}
+		
+		Assert.assertEquals( false, jose.estaVivo());
 	}
 }
