@@ -19,5 +19,8 @@ public class CaballeroTest {
 		Caballero jose = new Caballero ();
 		
 		Assert.assertEquals( 50, jose.hacerDanio(), 0);
+		Assert.assertEquals( 3, jose.getCaballoNoRebelde(), 0);
+		jose.recibirDanio(5);
+		Assert.assertEquals( 2, jose.getCaballoNoRebelde(), 0);
 	}
 }
