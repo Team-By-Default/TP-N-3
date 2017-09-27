@@ -5,7 +5,8 @@ public class UnidadConPunial extends UnidadConItem {
 	/**
 	 * @param unidad Es la unidad a la que le va a agregar el item
 	 */
-	public UnidadConPunial(Unidad unidad) {
+	public UnidadConPunial(Unidad unidad,int x,int y) {
+		super(x,y);
 		this.miUnidad = unidad;
 	}
 	/**

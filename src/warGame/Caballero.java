@@ -18,7 +18,8 @@ public class Caballero extends Unidad {
 	private final static int SALUDTOPE = 200;
 	private final static int DANIO = 50;
 	
-	public Caballero() {
+	public Caballero(int x, int y) {
+		super(x,y);
 		this.caballoNoRebelde=3;
 		this.salud = SALUDTOPE;
 		this.danio = DANIO;

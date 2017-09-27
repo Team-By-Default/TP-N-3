@@ -23,7 +23,8 @@ public class Soldado extends Unidad {
 	private static final int SALUDTOPE = 200;
 	private static final int DANIO = 10;
 	
-	public Soldado() {
+	public Soldado(int x,int y) {
+		super(x,y);
 		this.energia = energiaTope = 100;
 		this.danio = DANIO;
 		this.salud = SALUDTOPE;

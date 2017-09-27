@@ -5,7 +5,8 @@ public class UnidadConCapa extends UnidadConItem {
 	/**
 	 * @param unidad Es la unidad a la que le va a agregar el item
 	 */
-	public UnidadConCapa(Unidad unidad) {
+	public UnidadConCapa(Unidad unidad,int x,int y) {
+		super(x,y);
 		this.miUnidad = unidad;
 		if(miUnidad instanceof Soldado) {
 			Soldado soldadito = (Soldado) miUnidad;

@@ -9,7 +9,8 @@ public class Lancero extends Unidad {
 	private final static int SALUDTOPE = 150;
 	private final static int DANIO = 25;
 
-	public Lancero() {
+	public Lancero(int x,int y) {
+		super(x,y);
 		this.salud=SALUDTOPE;
 		this.danio=DANIO;
 	}

@@ -7,5 +7,9 @@ package warGame;
 public abstract class UnidadConItem extends Unidad {
 
 	Unidad miUnidad;
+	
+	public UnidadConItem(int x,int y) {
+		super(x,y);
+	}
 
 }
