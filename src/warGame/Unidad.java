@@ -14,13 +14,20 @@ public abstract class Unidad {
 	protected float danio;
 	private int posicionX;
 	private int posicionY;
+	
+	
+	
 	/**
 	 * Se trata de el ataque en cuestion, que usaría el que desarrolle la batalla.
 	 * @param that Es la unidad a la que se ataca
+	 * @return true si logró atacar, false si no lo logró
 	 */
-	public void atacar(Unidad that) {
-		if(this.estaVivo() && this.puedeAtacar(that))
+	public boolean atacar(Unidad that) {
+		if(this.estaVivo() && this.puedeAtacar(that)) {
 			that.recibirDanio(this.hacerDanio());
+			return true;
+		}
+		return false;
 	}
 	/**
 	 * Depende de cada unidad, me dice si tengo la posibilidad de atacar

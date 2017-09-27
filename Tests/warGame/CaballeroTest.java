@@ -3,7 +3,7 @@ package warGame;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class CaballeroTest {
+public class CaballeroTest  {
 	
 	/**
 	 * Buscamos ver si los atributos fueron bien colocados

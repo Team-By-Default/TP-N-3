@@ -11,7 +11,6 @@ public class Caballero extends Unidad {
 	 * considera rebelde cuando llega a 0.
 	 */
 	private int caballoNoRebelde;
-	
 	/**
 	 * El caballero tiene una salud inicial y tope de
 	 * 200 y causa un danio de 50.
@@ -23,14 +22,6 @@ public class Caballero extends Unidad {
 		this.caballoNoRebelde=3;
 		this.salud = SALUDTOPE;
 		this.danio = DANIO;
-	}
-	
-	/**
-	 * @return cantidad de ataques restantes para
-	 * alterar al caballo
-	 */
-	public int getCaballoNoRebelde() {
-		return this.caballoNoRebelde;
 	}
 	
 	/**
