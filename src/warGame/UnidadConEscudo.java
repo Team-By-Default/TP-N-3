@@ -28,7 +28,7 @@ public class UnidadConEscudo extends UnidadConItem {
 	 * @param danio es el daño proveniente del enemigo
 	 */
 	@Override
-	public void recibirDanio(int danio) {
+	public void recibirDanio(float danio) {
 		this.miUnidad.recibirDanio((int)(danio*0.4));
 	}
 

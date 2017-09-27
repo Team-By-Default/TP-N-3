@@ -9,7 +9,7 @@ public class UnidadConPunial extends UnidadConItem {
 	 * El punial reduce la defensa en 3 puntos
 	 */
 	@Override
-	public void recibirDanio(int danio) {
+	public void recibirDanio(float danio) {
 		this.miUnidad.recibirDanio(danio+3);
 	}
 	
@@ -21,7 +21,7 @@ public class UnidadConPunial extends UnidadConItem {
 	 * El punial aumenta la fuerza de los ataques en 3 puntos
 	 */
 	@Override
-	protected int hacerDanio() {
+	protected float hacerDanio() {
 		return this.miUnidad.hacerDanio()+3;
 	}
 

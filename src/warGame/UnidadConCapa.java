@@ -15,8 +15,8 @@ public class UnidadConCapa extends UnidadConItem {
 	}
 	
 	@Override
-	protected int hacerDanio() {
-		return miUnidad.hacerDanio() * 0.9;
+	protected float hacerDanio() {
+		return (float) (miUnidad.hacerDanio()*0.9);
 	}
 
 	

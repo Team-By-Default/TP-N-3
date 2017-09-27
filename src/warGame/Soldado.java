@@ -55,7 +55,7 @@ public class Soldado extends Unidad {
 	 * Hacer daño le quita 10 puntos de energía
 	 */
 	@Override
-	protected int hacerDanio() {
+	protected float hacerDanio() {
 		this.energia -= 10;
 		return DANIO;
 	}

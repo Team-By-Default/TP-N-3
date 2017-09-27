@@ -13,7 +13,7 @@ public class Arquero extends Unidad {
 	}
 
 	@Override
-	protected int hacerDanio() {
+	protected float hacerDanio() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

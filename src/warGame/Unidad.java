@@ -10,8 +10,8 @@ package warGame;
  */
 public abstract class Unidad {
 
-	protected int salud;
-	protected int danio;
+	protected float salud;
+	protected float danio;
 	private int posicionX;
 	private int posicionY;
 	/**
@@ -32,14 +32,14 @@ public abstract class Unidad {
 	 * Calcula el daño que se entrega al enemigo
 	 * @return El daño en enteros
 	 */
-	protected int hacerDanio() {
+	protected float hacerDanio() {
 		return danio;
 	}
 	/**
 	 * Calcula el daño final recibido por un ataque
 	 * @param danio Es el daño del enemigo
 	 */
-	protected void recibirDanio(int danio) {
+	protected void recibirDanio(float danio) {
 		this.salud-=danio;
 	}
 	/**
