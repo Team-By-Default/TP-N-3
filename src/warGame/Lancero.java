@@ -2,7 +2,7 @@ package warGame;
 
 public class Lancero extends Unidad {
 	
-	/*
+	/**
 	 * El lancero tiene una salud inicial y tope de
 	 * 150 y causa un danio de 25.
 	 */
@@ -14,9 +14,11 @@ public class Lancero extends Unidad {
 		this.danio=DANIO;
 	}
 	
-	/*
+	/**
 	 * El lancero puede atacar si está a una 
 	 * distancia entre 1 y 3 del oponente.
+	 * @param that Es la Unidad a la que pretende atacar
+	 * @return true si puede atacar, false si no puede
 	 */
 	@Override
 	protected boolean puedeAtacar(Unidad that) {

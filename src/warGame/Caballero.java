@@ -2,7 +2,7 @@ package warGame;
 
 public class Caballero extends Unidad {
 
-	/*
+	/**
 	 * Cuando recibe 3 ataques el caballo se asuta
 	 * y se pone rebelde. Mientras esté rebelde el
 	 * caballero no podrá atacar. El caballo solo se
@@ -12,7 +12,7 @@ public class Caballero extends Unidad {
 	 */
 	private int caballoNoRebelde;
 	
-	/*
+	/**
 	 * El caballero tiene una salud inicial y tope de
 	 * 200 y causa un danio de 50.
 	 */
@@ -25,7 +25,7 @@ public class Caballero extends Unidad {
 		this.danio = DANIO;
 	}
 	
-	/*
+	/**
 	 * tomarAgua() le da una poción de agua al
 	 * caballo y lo calma, lo saca del estado rebelde
 	 */
@@ -34,10 +34,12 @@ public class Caballero extends Unidad {
 		this.caballoNoRebelde=3;
 	}
 	
-	/*
+	/**
 	 * El caballero puede atacar si está a una 
 	 * distancia entre 1 y 2 del oponente y si su
 	 * caballo no está rebelde.
+	 * @param that Es la Unidad a la que pretende atacar
+	 * @return true si puede atacar, false si no puede
 	 */
 	@Override
 	protected boolean puedeAtacar(Unidad that) {

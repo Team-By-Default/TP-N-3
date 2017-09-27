@@ -37,7 +37,9 @@ public class Soldado extends Unidad {
 	public void setEnergiaTope(int energy) {
 		this.energiaTope = energy;
 	}
-	
+	/**
+	 * @return el entero de el maximo de energia
+	 */
 	public int getEnergiaTope() {
 		return this.energiaTope;
 	}
@@ -53,6 +55,7 @@ public class Soldado extends Unidad {
 	
 	/**
 	 * Hacer daño le quita 10 puntos de energía
+	 * @return El daño realizado
 	 */
 	@Override
 	protected float hacerDanio() {
@@ -64,6 +67,8 @@ public class Soldado extends Unidad {
 	 * Un soldado puede atacar si tiene por lo menos
 	 * 10 de energía y está cuerpo a cuerpo contra el
 	 * objetivo (distancia menor a 2)
+	 * @param that Es la Unidad a la que pretende atacar
+	 * @return true si puede atacar, false si no puede
 	 */
 	@Override
 	protected boolean puedeAtacar(Unidad that) {
