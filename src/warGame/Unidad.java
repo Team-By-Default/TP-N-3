@@ -15,7 +15,10 @@ public abstract class Unidad {
 	private int posicionX;
 	private int posicionY;
 	
-	
+	public Unidad(int x,int y) {
+		this.posicionX=x;
+		this.posicionY=y;
+	}
 	
 	/**
 	 * Se trata de el ataque en cuestion, que usaría el que desarrolle la batalla.

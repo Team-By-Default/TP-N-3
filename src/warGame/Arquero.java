@@ -16,7 +16,8 @@ public class Arquero extends Unidad {
 	private static final int DANIO = 5;
 	
 	
-	public Arquero() {
+	public Arquero(int x, int y) {
+		super(x,y);
 		this.salud = SALUDTOPE;
 		this.danio = DANIO;
 		flechas=20;
