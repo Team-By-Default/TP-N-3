@@ -43,6 +43,12 @@ public class Soldado extends Unidad {
 	public int getEnergiaTope() {
 		return this.energiaTope;
 	}
+	/**
+	 * @return el entero de la energia actual
+	 */
+	public int getEnergia() {
+		return this.energia;
+	}
 	
 	/**
 	 * tomarAgua() le da una poción de agua al
@@ -76,5 +82,4 @@ public class Soldado extends Unidad {
 			return true;
 		return false;
 	}
-
 }
