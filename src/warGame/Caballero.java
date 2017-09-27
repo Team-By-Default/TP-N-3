@@ -26,6 +26,14 @@ public class Caballero extends Unidad {
 	}
 	
 	/**
+	 * @return cantidad de ataques restantes para
+	 * alterar al caballo
+	 */
+	public int getCaballoNoRebelde() {
+		return this.caballoNoRebelde;
+	}
+	
+	/**
 	 * tomarAgua() le da una poción de agua al
 	 * caballo y lo calma, lo saca del estado rebelde
 	 */
