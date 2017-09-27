@@ -9,8 +9,8 @@ public class UnidadConEscudo extends UnidadConItem {
 	/**
 	 * @param unidad Es la unidad a la que le va a agregar el item
 	 */
-	public UnidadConEscudo(Unidad unidad,int x,int y) {
-		super(x,y);
+	public UnidadConEscudo(Unidad unidad) {
+		super(0,0);
 		this.miUnidad=unidad;
 	}
 	
