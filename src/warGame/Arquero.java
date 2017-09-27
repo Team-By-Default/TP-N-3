@@ -8,9 +8,9 @@ public class Arquero extends Unidad {
 	int flechas;
 
 	/**
-	 * Un ARQUERO tiene, de inicial y tope, 
+	 * Un Arquero tiene, de inicial y tope, 
 	 * una salud de 50 y hace un
-	 * danio de 5.
+	 * daño de 5.
 	 */
 	private static final int SALUDTOPE = 50;
 	private static final int DANIO = 5;
