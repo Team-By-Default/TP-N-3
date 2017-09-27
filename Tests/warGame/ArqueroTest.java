@@ -47,7 +47,6 @@ public class ArqueroTest {
 
 		Assert.assertEquals( 5, oliver.hacerDanio(), 0);
 		Assert.assertEquals( 19, oliver.flechas, 0);
-		Assert.assertEquals( true, oliver.estaVivo());
 	}
 	
 	/**
@@ -92,23 +91,20 @@ public class ArqueroTest {
 	
 	
 	/**
-	 * Buscamos ver si el arquero es capaz de atacar a
-	 * objetivos en diferente distancias
+	 * Buscamos ver si los arqueros son capaces de atacar a
+	 * objetivos en diferentes distancias
 	 */
 	@Test
 	public void testeandoPuedeAtacar() {
 
 		Assert.assertEquals(true, oliver.puedeAtacar(hawk));
-		
-		Assert.assertEquals(false, oliver.puedeAtacar(legolas));
-
 		Assert.assertEquals(true, hawk.puedeAtacar(oliver));
 		
 		Assert.assertEquals(true, hawk.puedeAtacar(legolas));
-
 		Assert.assertEquals(true, legolas.puedeAtacar(hawk));
 		
 		Assert.assertEquals(false, legolas.puedeAtacar(oliver));
+		Assert.assertEquals(false, oliver.puedeAtacar(legolas));
 	}
 	
 	/**

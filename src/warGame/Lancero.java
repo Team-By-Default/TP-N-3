@@ -23,7 +23,7 @@ public class Lancero extends Unidad {
 	 */
 	@Override
 	protected boolean puedeAtacar(Unidad that) {
-		if(this.distanciaA(that)>1 && this.distanciaA(that)<3)
+		if(this.distanciaA(that)>=1 && this.distanciaA(that)<=3)
 			return true;
 		return false;
 	}
