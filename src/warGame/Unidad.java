@@ -19,7 +19,7 @@ public abstract class Unidad {
 	 * @param that Es la unidad a la que se ataca
 	 */
 	public void atacar(Unidad that) {
-		if(this.puedeAtacar(that))
+		if(this.estaVivo() && this.puedeAtacar(that))
 			that.recibirDanio(this.hacerDanio());
 	}
 	/**
