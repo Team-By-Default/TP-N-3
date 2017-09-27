@@ -1,16 +1,27 @@
 package warGame;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class SoldadoTest {
-
+	
+	Soldado jose;
+	Soldado ronaldo;
+	Soldado lejano;
+	
+	@Before
+	public void setUp() {
+		jose = new Soldado (0,0);
+		ronaldo = new Soldado (1,0);
+		lejano = new Soldado (10,10);
+	}
+	
 	/**
 	 * Buscamos ver si los atributos fueron bien colocados
 	 */
 	@Test
 	public void testeandoAtributos() {
-		Soldado jose = new Soldado ();
 		
 		Assert.assertEquals( 200, jose.salud, 0);
 		Assert.assertEquals( 10, jose.danio, 0);
@@ -20,7 +31,6 @@ public class SoldadoTest {
 
 	@Test
 	public void testeandoHacerDanio() {
-		Soldado jose = new Soldado ();
 		
 		Assert.assertEquals( 10, jose.hacerDanio(), 0);
 	}
@@ -32,8 +42,6 @@ public class SoldadoTest {
 	 */
 	@Test
 	public void testeandoPuedeAtacar() {
-		Soldado jose = new Soldado ();
-		Soldado ronaldo = new Soldado ();
 		
 		Assert.assertEquals( true, jose.puedeAtacar(ronaldo));
 	}
@@ -43,7 +51,6 @@ public class SoldadoTest {
 	 */
 	@Test
 	public void testeandoLimitesEnergia() {
-		Soldado jose = new Soldado ();
 		
 		for(int i = 0; i <10; i++) {
 			jose.hacerDanio();
@@ -57,8 +64,6 @@ public class SoldadoTest {
 	 */
 	@Test
 	public void testeandoAtacar() {
-		Soldado jose = new Soldado ();
-		Arquero ronaldo = new Arquero ();
 		
 		Assert.assertEquals( true, jose.puedeAtacar(ronaldo));
 		jose.atacar(ronaldo);
@@ -70,8 +75,6 @@ public class SoldadoTest {
 	 */
 	@Test
 	public void testeandoRecibirDanio() {
-		Soldado jose = new Soldado ();
-		Soldado ronaldo = new Soldado ();
 
 		for(int i = 0; i < 10; i++) {
 			Assert.assertEquals( true, jose.estaVivo());
@@ -92,8 +95,6 @@ public class SoldadoTest {
 	 */
 	@Test
 	public void testeandoAtacarMuerto() {
-		Soldado jose = new Soldado ();
-		Soldado ronaldo = new Soldado ();
 
 		for(int i = 0; i < 10; i++) {
 			Assert.assertEquals( true, jose.estaVivo());

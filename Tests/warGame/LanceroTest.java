@@ -1,16 +1,27 @@
 package warGame;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class LanceroTest {
+	
+	Lancero jose;
+	Lancero ronaldo;
+	Lancero lejano;
+	
+	@Before
+	public void setUp() {
+		jose = new Lancero (0,0);
+		ronaldo = new Lancero (1,0);
+		lejano = new Lancero (10,10);
+	}
 	
 	/**
 	 * Buscamos ver si los atributos fueron bien colocados
 	 */
 	@Test
 	public void testeandoAtributos() {
-		Lancero jose = new Lancero ();
 		
 		Assert.assertEquals( 150, jose.salud, 0);
 		Assert.assertEquals( 25, jose.danio, 0);
@@ -23,8 +34,6 @@ public class LanceroTest {
 	 */
 	@Test
 	public void testeandoPuedeAtacar() {
-		Lancero jose = new Lancero ();
-		Soldado ronaldo = new Soldado ();
 		
 		Assert.assertEquals( false, jose.puedeAtacar(ronaldo));
 	}
@@ -34,8 +43,6 @@ public class LanceroTest {
 	 */
 	@Test
 	public void testeandoRecibirDanio() {
-		Lancero jose = new Lancero ();
-		Soldado ronaldo = new Soldado ();
 		
 		for(int i = 0; i < 10; i++) {
 			Assert.assertEquals( true, jose.estaVivo());
