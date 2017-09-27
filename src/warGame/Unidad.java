@@ -65,4 +65,8 @@ public abstract class Unidad {
 			return true;
 		return false;
 	}
+	
+	public float getSalud() {
+		return this.salud;
+	}
 }
