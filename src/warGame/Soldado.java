@@ -35,7 +35,7 @@ public class Soldado extends Unidad {
 	 * energiaTope
 	 * @param energy: nuevo valor
 	 */
-	public void setEnergiaTope(int energy) {
+	protected void setEnergiaTope(int energy) {
 		this.energiaTope = energy;
 	}
 	/**
