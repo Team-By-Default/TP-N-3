@@ -55,5 +55,10 @@ public class Caballero extends Unidad {
 			return true;
 		return false;
 	}
+	
+	protected void recibirDanio(float danio) {
+		this.salud-=danio;
+		this.caballoNoRebelde--;
+	}
 
 }

@@ -24,19 +24,10 @@ public class CaballeroTest {
 	public void testeandoRecibirDanio() {
 		Caballero jose = new Caballero ();
 		Soldado ronaldo = new Soldado ();
-		
-		for(int i = 0; i < 10; i++) {
-			Assert.assertEquals( true, jose.estaVivo());
-			ronaldo.atacar(jose);
-		}
-
-		ronaldo.tomarAgua();
-		
-		for(int i = 0; i < 10; i++) {
-			Assert.assertEquals( true, jose.estaVivo());
-			ronaldo.atacar(jose);
-		}
-		
-		Assert.assertEquals( false, jose.estaVivo());
+    
+		Assert.assertEquals( 50, jose.hacerDanio(), 0);
+		Assert.assertEquals( 3, jose.getCaballoNoRebelde(), 0);
+		jose.recibirDanio(5);
+		Assert.assertEquals( 2, jose.getCaballoNoRebelde(), 0);
 	}
 }
