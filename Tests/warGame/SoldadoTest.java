@@ -13,8 +13,8 @@ public class SoldadoTest {
 	@Before
 	public void setUp() {
 		jose = new Soldado ();
-		ronaldo = new Soldado ();
-		lejano = new Soldado (1,0);
+		ronaldo = new Soldado (1,0);
+		lejano = new Soldado (2,0);
 	}
 	
 	/**
@@ -33,12 +33,13 @@ public class SoldadoTest {
 	 */
 	@Test
 	public void testeandoLimitesEnergia() {
-		
-		for(int i = 0; i <10; i++) {
-			jose.hacerDanio();
-		}
+		int cant = 0;
+		while(jose.atacar(ronaldo))
+			cant ++;
 		
 		Assert.assertEquals( 0, jose.getEnergia(), 0);
+		Assert.assertEquals( 10, cant, 0);
+		Assert.assertEquals( false, jose.atacar(ronaldo));
 	}
 	
 	/**
@@ -51,6 +52,8 @@ public class SoldadoTest {
 		
 		Assert.assertEquals( 190, ronaldo.getSalud(),0);
 		Assert.assertEquals( 90, jose.getEnergia(),0);
+		
+		Assert.assertEquals( false, jose.atacar(lejano));
 	}
 	
 	/**
@@ -61,6 +64,24 @@ public class SoldadoTest {
 
 			Assert.assertEquals( true, ronaldo.atacar(jose));
 			Assert.assertEquals( 190, jose.getSalud(),0);
+	}
+
+	/**
+	 * Buscamos ver que pasa si toma agua
+	 */
+	@Test
+	public void testeandoTomarAgua() {
+		int cant = 0;
+		while(jose.atacar(ronaldo))
+			cant ++;
+		
+		Assert.assertEquals( 0, jose.getEnergia(), 0);
+		Assert.assertEquals( 10, cant, 0);
+		Assert.assertEquals( false, jose.atacar(ronaldo));
+		
+		jose.tomarAgua();
+		
+		Assert.assertEquals( 100, jose.getEnergia(), 0);
 	}
 	
 	/**
@@ -97,22 +118,8 @@ public class SoldadoTest {
 		for(int i = 0; i < 10; i++)
 			ronaldo.atacar(jose);
 
+		Assert.assertEquals( false, jose.estaVivo());
 		Assert.assertEquals( false, jose.atacar(ronaldo));
-	}
-
-	/**
-	 * Buscamos ver que pasa si toma agua
-	 */
-	@Test
-	public void testeandoTomarAgua() {
-
-		Assert.assertEquals( 100, jose.getEnergia(), 0);
-		jose.atacar(ronaldo);
-		Assert.assertEquals( 90, jose.getEnergia(), 0);
-		
-		jose.tomarAgua();
-
-		Assert.assertEquals( 100, jose.getEnergia(), 0);
 	}
 
 }

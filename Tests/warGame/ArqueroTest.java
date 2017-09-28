@@ -25,6 +25,7 @@ public class ArqueroTest {
 	public void testeandoAtributos() {
 		
 		Assert.assertEquals( 50, oliver.getSalud(), 0);
+		Assert.assertEquals( true, oliver.estaVivo());
 	}
 	
 	/**

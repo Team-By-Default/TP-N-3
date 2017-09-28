@@ -49,11 +49,10 @@ public class CaballeroTest {
 	 */
 	@Test
 	public void testeandoMuerte() {
-		jose.atacar(pepe);
-		jose.atacar(pepe);
-		jose.atacar(pepe);
-		jose.atacar(pepe);
-		Assert.assertEquals(0, pepe.getSalud(),0);
+		while(pepe.estaVivo())
+			jose.atacar(pepe);
+
+		Assert.assertEquals(0, jose.getSalud(),0);
 		Assert.assertEquals(false, pepe.estaVivo());
 	}
 	
@@ -63,6 +62,8 @@ public class CaballeroTest {
 	 */
 	public void testeandoDistancia() {
 		Assert.assertEquals( false, jose.atacar(lejano));
+		
+		Assert.assertEquals( true, jose.atacar(pepe));
 	}
 	
 	/**
@@ -72,9 +73,10 @@ public class CaballeroTest {
 	 */
 	@Test
 	public void testeandoCaballoRebelde() {
-		pepe.atacar(jose);
-		pepe.atacar(jose);
-		pepe.atacar(jose);
+		for(int i = 0; i < 3; i++) {
+			pepe.atacar(jose);
+		}
+		
 		Assert.assertEquals( false, jose.atacar(pepe));
 	}
 	/**
@@ -84,10 +86,11 @@ public class CaballeroTest {
 	 */
 	@Test
 	public void testeandoCaballoRebeldeRecuperado() {
-		pepe.atacar(jose);
-		pepe.atacar(jose);
-		pepe.atacar(jose);
+		for(int i = 0; i < 3; i++) {
+			pepe.atacar(jose);
+		}
 		Assert.assertEquals( false, jose.atacar(pepe));
+		
 		jose.tomarAgua();
 		Assert.assertEquals( true, jose.atacar(pepe));
 	}

@@ -16,6 +16,16 @@ public class LanceroTest {
 		ronaldo = new Lancero (1,0);
 		lejano = new Lancero (4,0);
 	}
+	
+	/**
+	 * Buscamos ver si los atributos fueron bien colocados
+	 */
+	@Test
+	public void testeandoAtributos() {
+		
+		Assert.assertEquals( 150, jose.getSalud(), 0);
+		Assert.assertEquals( true, jose.estaVivo());
+	}
 
 	/**
 	 * Test que muestra que ambos Lanceros
@@ -27,17 +37,9 @@ public class LanceroTest {
 	public void testeandoDanio() {
 		jose.atacar(ronaldo);
 		Assert.assertEquals(125, ronaldo.getSalud(),0);
+		
 		ronaldo.atacar(jose);
 		Assert.assertEquals(125, jose.getSalud(),0);
-	}
-	
-	/**
-	 * Buscamos ver si los atributos fueron bien colocados
-	 */
-	@Test
-	public void testeandoAtributos() {
-		
-		Assert.assertEquals( 150, jose.getSalud(), 0);
 	}
 	
 	/**
@@ -46,27 +48,14 @@ public class LanceroTest {
 	@Test
 	public void testeandoPuedeAtacar() {
 		
-		Assert.assertEquals( true, jose.puedeAtacar(ronaldo));
-		Assert.assertEquals( true, ronaldo.puedeAtacar(jose));
+		Assert.assertEquals( true, jose.atacar(ronaldo));
+		Assert.assertEquals( true, ronaldo.atacar(jose));
 
-		Assert.assertEquals( false, jose.puedeAtacar(lejano));
-		Assert.assertEquals( false, lejano.puedeAtacar(jose));
+		Assert.assertEquals( false, jose.atacar(lejano));
+		Assert.assertEquals( false, lejano.atacar(jose));
 		
-		Assert.assertEquals( true, lejano.puedeAtacar(ronaldo));
-		Assert.assertEquals( true, ronaldo.puedeAtacar(lejano));
-	}
-	
-	/**
-	 * Buscamos ver si recibe daño el lancero
-	 */
-	@Test
-	public void testeandoRecibirDanio() {
-		
-		Assert.assertEquals( 150, jose.getSalud(), 0);
-		
-		ronaldo.atacar(jose);
-
-		Assert.assertEquals( 125, jose.getSalud(), 0);
+		Assert.assertEquals( true, lejano.atacar(ronaldo));
+		Assert.assertEquals( true, ronaldo.atacar(lejano));
 	}
 	
 	/**
@@ -75,10 +64,8 @@ public class LanceroTest {
 	@Test
 	public void testeandoMorir() {
 
-		for(int i = 0; i < 6; i++) {
-			Assert.assertEquals( true, jose.estaVivo());
+		while(jose.estaVivo())
 			ronaldo.atacar(jose);
-		}
 
 		Assert.assertEquals( false, jose.estaVivo());
 	}
@@ -89,27 +76,10 @@ public class LanceroTest {
 	@Test
 	public void testeandoMuertoAtaca() {
 
-		for(int i = 0; i < 6; i++) {
-			Assert.assertEquals( true, jose.estaVivo());
+		while(jose.estaVivo())
 			ronaldo.atacar(jose);
-		}
 
 		Assert.assertEquals( false, jose.atacar(ronaldo));
-	}
-
-	/**
-	 * Buscamos ver que pasa si toma agua
-	 */
-	@Test
-	public void testeandoTomarAgua() {
-
-		Assert.assertEquals( 150, jose.getSalud(), 0);
-		ronaldo.atacar(jose);
-		Assert.assertEquals( 125, jose.getSalud(), 0);
-		
-		jose.tomarAgua();
-
-		Assert.assertEquals( 125, jose.getSalud(), 0);
 	}
 
 }
