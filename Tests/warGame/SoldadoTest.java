@@ -43,7 +43,7 @@ public class SoldadoTest {
 	}
 	
 	/**
-	 * Buscamos ver si el soldado es capaz de atacar
+	 * Buscamos ver los efectos del ataque del soldado
 	 */
 	@Test
 	public void testeandoAtacar() {
@@ -52,12 +52,28 @@ public class SoldadoTest {
 		
 		Assert.assertEquals( 190, ronaldo.getSalud(),0);
 		Assert.assertEquals( 90, jose.getEnergia(),0);
-		
-		Assert.assertEquals( false, jose.atacar(lejano));
+	}
+	
+	
+	/**
+	 * Buscamos ver si los arqueros son capaces de atacar a
+	 * objetivos en diferentes distancias
+	 */
+	@Test
+	public void testeandoDistancias() {
+
+		Assert.assertEquals(true, jose.atacar(ronaldo));
+		Assert.assertEquals(true, ronaldo.atacar(jose));
+
+		Assert.assertEquals(false, lejano.atacar(jose));
+		Assert.assertEquals(false, jose.atacar(lejano));
+
+		Assert.assertEquals(true, lejano.atacar(ronaldo));
+		Assert.assertEquals(true, ronaldo.atacar(lejano));
 	}
 	
 	/**
-	 * Buscamos ver si el Soldado reciebe daño
+	 * Buscamos ver si el Soldado recibe daño
 	 */
 	@Test
 	public void testeandoRecibirDanio() {

@@ -32,7 +32,7 @@ public class ArqueroTest {
 	 * Buscamos ver el limite de las flechas
 	 */
 	@Test
-	public void testeandoFlechas() {
+	public void testeandoLimiteDeFlechas() {
 		int cant = 0;
 		while(oliver.atacar(hawk))
 			cant++;
@@ -57,13 +57,24 @@ public class ArqueroTest {
 	}
 	
 	/**
-	 * Test que muestra que ambos Arqueros
-	 * realizan 5 puntos de daño, sin items
+	 * Buscamos ver los efectos del ataque del arquero
 	 */
 	@Test
-	public void testeandoHacerDanio() {
-		hawk.atacar(oliver);
-		Assert.assertEquals(45, oliver.getSalud(),0);
+	public void testeandoAtacar() {
+		Assert.assertEquals(50, hawk.getSalud(),0);
+		oliver.atacar(hawk);
+		Assert.assertEquals(45, hawk.getSalud(),0);
+	}
+	
+	/**
+	 * Buscamos ver si mi arquero recibe daño
+	 */
+	@Test
+	public void testeandoRecibirDanio() {
+
+			Assert.assertEquals( 50, oliver.getSalud(), 0);
+			hawk.atacar(oliver);
+			Assert.assertEquals( 45, oliver.getSalud(), 0);
 	}
 	
 	/**
@@ -74,6 +85,7 @@ public class ArqueroTest {
 		int cant = 0;
 		while(oliver.atacar(hawk))
 			cant++;
+		
 		Assert.assertEquals( 20, cant, 0);
 		Assert.assertEquals( false, oliver.atacar(hawk));
 	}
@@ -84,7 +96,7 @@ public class ArqueroTest {
 	 * objetivos en diferentes distancias
 	 */
 	@Test
-	public void testeandoPuedeAtacar() {
+	public void testeandoDistancias() {
 
 		Assert.assertEquals(true, oliver.atacar(hawk));
 		Assert.assertEquals(true, hawk.atacar(oliver));
@@ -94,17 +106,6 @@ public class ArqueroTest {
 		
 		Assert.assertEquals(false, legolas.atacar(oliver));
 		Assert.assertEquals(false, oliver.atacar(legolas));
-	}
-	
-	/**
-	 * Buscamos ver si el arquero recibe daño
-	 */
-	@Test
-	public void testeandoRecibirDanio() {
-
-			Assert.assertEquals( 50, oliver.getSalud(), 0);
-			hawk.atacar(oliver);
-			Assert.assertEquals( 45, oliver.getSalud(), 0);
 	}
 	
 	/**
@@ -128,6 +129,7 @@ public class ArqueroTest {
 		while(oliver.estaVivo())
 			hawk.atacar(oliver);
 
+		Assert.assertEquals( false, oliver.estaVivo());
 		Assert.assertEquals( false, oliver.atacar(hawk));
 	}
 }

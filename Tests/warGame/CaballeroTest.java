@@ -12,9 +12,9 @@ public class CaballeroTest {
 	
 	@Before
 	public void setUp() {
-		jose = new Caballero (0,0);
+		jose = new Caballero ();
 		pepe = new Caballero (1,0);
-		lejano = new Caballero (10,10);
+		lejano = new Caballero (3,0);
 	}
 	
 	/**
@@ -57,13 +57,31 @@ public class CaballeroTest {
 	}
 	
 	/**
+	 * Buscamos ver si el caballero puede atacar si esta muerto
+	 */
+	@Test
+	public void testeandoMuertoAtaca() {
+
+		while(jose.estaVivo())
+			pepe.atacar(jose);
+
+		Assert.assertEquals( false, jose.estaVivo());
+		Assert.assertEquals( false, jose.atacar(pepe));
+	}
+	
+	/**
 	 * Teste que muestra que el Caballero no
 	 * puede atacar por la distancia
 	 */
 	public void testeandoDistancia() {
+		Assert.assertEquals( true, jose.atacar(pepe));
+		Assert.assertEquals( true, pepe.atacar(jose));
+
+		Assert.assertEquals( false, lejano.atacar(jose));
 		Assert.assertEquals( false, jose.atacar(lejano));
 		
-		Assert.assertEquals( true, jose.atacar(pepe));
+		Assert.assertEquals( true, pepe.atacar(lejano));
+		Assert.assertEquals( true, lejano.atacar(pepe));
 	}
 	
 	/**

@@ -43,10 +43,21 @@ public class LanceroTest {
 	}
 	
 	/**
+	 * Buscamos ver los efectos del ataque del lancero
+	 */
+	@Test
+	public void testeandoAtacar() {
+		
+		Assert.assertEquals( true, jose.atacar(ronaldo));
+		
+		Assert.assertEquals( 125, ronaldo.getSalud(),0);
+	}
+	
+	/**
 	 * Buscamos ver si el lancero es capaz de atacar a su objetivo
 	 */
 	@Test
-	public void testeandoPuedeAtacar() {
+	public void testeandoDistancias() {
 		
 		Assert.assertEquals( true, jose.atacar(ronaldo));
 		Assert.assertEquals( true, ronaldo.atacar(jose));
