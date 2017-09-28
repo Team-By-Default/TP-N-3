@@ -6,8 +6,7 @@ public class UnidadConPunial extends UnidadConItem {
 	 * @param unidad Es la unidad a la que le va a agregar el item
 	 */
 	public UnidadConPunial(Unidad unidad) {
-		super(0,0);
-		this.miUnidad = unidad;
+		super(unidad);
 	}
 	/**
 	 * El puñal reduce la defensa en 3 puntos, 
@@ -20,15 +19,6 @@ public class UnidadConPunial extends UnidadConItem {
 		this.miUnidad.recibirDanio(danio+3);
 	}
 	
-	/**
-	 * Determina si la unidad puede atacar, depende de miUnidad
-	 * @param that Es la unidad a la que se dispone a atacar
-	 * @return true si puede atacar, false si no
-	 */
-	@Override
-	protected boolean puedeAtacar(Unidad that) {
-		return this.miUnidad.puedeAtacar(that);
-	}
 	/**
 	 * El punial aumenta la fuerza de los ataques en 3 puntos
 	 * @return El daño final, sumado el +3 al daño

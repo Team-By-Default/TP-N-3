@@ -10,19 +10,9 @@ public class UnidadConEscudo extends UnidadConItem {
 	 * @param unidad Es la unidad a la que le va a agregar el item
 	 */
 	public UnidadConEscudo(Unidad unidad) {
-		super(0,0);
-		this.miUnidad=unidad;
+		super(unidad);
 	}
 	
-	/**
-	 * Determina si la unidad puede atacar, depende de miUnidad
-	 * @param that Es la unidad a la que se dispone a atacar
-	 * @return true si puede atacar, false si no
-	 */
-	@Override
-	protected boolean puedeAtacar(Unidad that) {
-		return this.miUnidad.puedeAtacar(that);
-	}
 	/**
 	 * Modifica el daño recibido por culpa del escudo, al 40%
 	 * @param danio es el daño proveniente del enemigo
