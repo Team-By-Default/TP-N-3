@@ -22,6 +22,14 @@ public class UnidadConCapa extends UnidadConItem {
 	protected float hacerDanio() {
 		return (float)(miUnidad.hacerDanio()*0.9);
 	}
+	
+	public boolean atacar(Unidad that) {
+		if(this.estaVivo() && this.puedeAtacar(that)) {
+			that.recibirDanio(this.hacerDanio());
+			return true;
+		}
+		return false;
+	}
 
 	
 }

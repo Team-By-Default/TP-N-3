@@ -52,7 +52,7 @@ public class CaballeroTest {
 		while(pepe.estaVivo())
 			jose.atacar(pepe);
 
-		Assert.assertEquals(0, jose.getSalud(),0);
+		Assert.assertEquals(0, pepe.getSalud(),0);
 		Assert.assertEquals(false, pepe.estaVivo());
 	}
 	

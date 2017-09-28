@@ -61,20 +61,20 @@ public class UnidadConCapaTest {
 		
 		Assert.assertEquals(200, valeria.getSalud(),0);
 		Assert.assertEquals(true, daniel.atacar(valeria));
-		Assert.assertEquals(195, valeria.getSalud(),0);
+		Assert.assertEquals(195.5, valeria.getSalud(),0);
 		
 		Assert.assertEquals(50, daniel.getSalud(),0);
 		Assert.assertEquals(true, valeria.atacar(daniel));
-		Assert.assertEquals(0, daniel.getSalud(),0);
+		Assert.assertEquals(5, daniel.getSalud(),0);
 		
 
 		Assert.assertEquals(200, alexis.getSalud(),0);
 		Assert.assertEquals(true, lara.atacar(alexis));
-		Assert.assertEquals(175, alexis.getSalud(),0);
+		Assert.assertEquals(177.5, alexis.getSalud(),0);
 		
 		Assert.assertEquals(150, lara.getSalud(),0);
 		Assert.assertEquals(true, alexis.atacar(lara));
-		Assert.assertEquals(140, lara.getSalud(),0);
+		Assert.assertEquals(141, lara.getSalud(),0);
 		
 	}
 }
