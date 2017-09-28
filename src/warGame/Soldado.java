@@ -19,6 +19,13 @@ public class Soldado extends Unidad implements Bebedor {
 	private static final int SALUDTOPE = 200;
 	private static final int DANIO = 10;
 	
+	public Soldado() {
+		this.moverA(0, 0);
+		this.energia = energiaTope = 100;
+		this.setSalud(SALUDTOPE);
+		this.setDanio(DANIO);
+	}
+	
 	public Soldado(int x,int y) {
 		this.moverA(x, y);
 		this.energia = energiaTope = 100;

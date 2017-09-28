@@ -12,8 +12,8 @@ public class SoldadoTest {
 	
 	@Before
 	public void setUp() {
-		jose = new Soldado (0,0);
-		ronaldo = new Soldado (0,0);
+		jose = new Soldado ();
+		ronaldo = new Soldado ();
 		lejano = new Soldado (1,0);
 	}
 	

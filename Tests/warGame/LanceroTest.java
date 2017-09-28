@@ -12,7 +12,7 @@ public class LanceroTest {
 	
 	@Before
 	public void setUp() {
-		jose = new Lancero (0,0);
+		jose = new Lancero ();
 		ronaldo = new Lancero (1,0);
 		lejano = new Lancero (4,0);
 	}
