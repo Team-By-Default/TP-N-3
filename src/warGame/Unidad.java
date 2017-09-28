@@ -98,14 +98,6 @@ public abstract class Unidad {
 		return Math.sqrt(Math.pow(this.posicionX-that.posicionX,2)+Math.pow(this.posicionY-that.posicionY,2));	
 	}
 	
-	//Quiero mover tomarAgua() a una interfaz Bebedor (Vale)
-	/**
-	 * Ve los efectos de tomar agua, por defecto, ninguno
-	 */
-	public void tomarAgua() {
-		return;
-	}
-	
 	/**
 	 * Nos avisa si nuestra Unidad sigue con vida
 	 * @return true si está vivo, false si está muerto

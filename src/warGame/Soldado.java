@@ -1,6 +1,6 @@
 package warGame;
 
-public class Soldado extends Unidad {
+public class Soldado extends Unidad implements Bebedor {
 
 	/**
 	 * La energía que le queda a un soldado
@@ -49,6 +49,7 @@ public class Soldado extends Unidad {
 	}
 	
 	/**
+	 * Por implementar Bebedor.
 	 * tomarAgua() le da una poción de agua al soldado, que le restaura la energía.
 	 */
 	@Override

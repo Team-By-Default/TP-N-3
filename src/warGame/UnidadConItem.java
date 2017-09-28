@@ -4,7 +4,7 @@ package warGame;
  * @author alexis
  * @param miUnidad Es la unidad a ser modificada
  */
-public abstract class UnidadConItem extends Unidad {
+public abstract class UnidadConItem extends Unidad implements Bebedor, Shooter {
 
 	protected Unidad miUnidad;
 	/*Es una clase abstracta, no debería ser instanciable
@@ -81,7 +81,13 @@ public abstract class UnidadConItem extends Unidad {
 	 * Ve los efectos de tomar agua, por defecto, ninguno
 	 */
 	public void tomarAgua() {
-		miUnidad.tomarAgua();
+		if(miUnidad instanceof Bebedor)
+			((Bebedor) miUnidad).tomarAgua();
+	}
+	
+	public void cargarFlechas() {
+		if(miUnidad instanceof Shooter)
+			((Shooter) miUnidad).cargarFlechas();
 	}
 	
 	/**
