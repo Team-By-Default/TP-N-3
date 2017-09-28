@@ -13,37 +13,34 @@ public class Soldado extends Unidad {
 	private int energiaTope;
 	
 	/**
-	 * Un soldado tiene, de inicial y tope, una
-	 * energía de 100, una salud de 200 y hace un
-	 * danio de 10.
-	 * Tener en cuenta que si se le asigna una capa
-	 * habrá un override y se superará la energía
-	 * tope.
+	 * Un soldado tiene, de inicial y tope, una energía de 100, una salud de 200 y hace un danio
+	 * de 10. Tener en cuenta que si se le asigna una capa se modificará la energía tope.
 	 */
 	private static final int SALUDTOPE = 200;
 	private static final int DANIO = 10;
 	
 	public Soldado(int x,int y) {
-		super(x,y);
+		this.moverA(x, y);
 		this.energia = energiaTope = 100;
-		this.danio = DANIO;
-		this.salud = SALUDTOPE;
+		this.setSalud(SALUDTOPE);
+		this.setDanio(DANIO);
 	}
 	
 	/**
-	 * UnidadConCapa tiene que poder duplicar la
-	 * energiaTope
+	 * UnidadConCapa tiene que poder duplicar la energiaTope
 	 * @param energy: nuevo valor
 	 */
 	protected void setEnergiaTope(int energy) {
 		this.energiaTope = energy;
 	}
+	
 	/**
-	 * @return el entero de el maximo de energia
+	 * @return el entero del maximo de energia
 	 */
 	public int getEnergiaTope() {
 		return this.energiaTope;
 	}
+	
 	/**
 	 * @return el entero de la energia actual
 	 */
@@ -52,8 +49,7 @@ public class Soldado extends Unidad {
 	}
 	
 	/**
-	 * tomarAgua() le da una poción de agua al
-	 * soldado, que le restaura la energía.
+	 * tomarAgua() le da una poción de agua al soldado, que le restaura la energía.
 	 */
 	@Override
 	public void tomarAgua() {
@@ -71,8 +67,7 @@ public class Soldado extends Unidad {
 	}
 	
 	/**
-	 * Un soldado puede atacar si tiene por lo menos
-	 * 10 de energía y está cuerpo a cuerpo contra el
+	 * Un soldado puede atacar si tiene por lo menos 10 de energía y está cuerpo a cuerpo contra el
 	 * objetivo (distancia menor a 2)
 	 * @param that Es la Unidad a la que pretende atacar
 	 * @return true si puede atacar, false si no puede
