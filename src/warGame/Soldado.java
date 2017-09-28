@@ -42,6 +42,14 @@ public class Soldado extends Unidad implements Bebedor {
 	}
 	
 	/**
+	 * UnidadConCapa tiene que poder duplicar la energia
+	 * @param energy: nuevo valor
+	 */
+	protected void setEnergia(int energy) {
+		this.energia = energy;
+	}
+	
+	/**
 	 * @return el entero del maximo de energia
 	 */
 	public int getEnergiaTope() {

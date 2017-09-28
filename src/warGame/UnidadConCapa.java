@@ -9,6 +9,7 @@ public class UnidadConCapa extends UnidadConItem {
 		this.miUnidad = unidad;
 		if(miUnidad instanceof Soldado) {
 			Soldado soldadito = (Soldado) miUnidad;
+			soldadito.setEnergia(soldadito.getEnergia() * 2);
 			soldadito.setEnergiaTope(soldadito.getEnergiaTope() * 2);
 		}
 	}
@@ -19,7 +20,7 @@ public class UnidadConCapa extends UnidadConItem {
 	 */
 	@Override
 	protected float hacerDanio() {
-		return (float) (miUnidad.hacerDanio()*0.9);
+		return (float)(miUnidad.hacerDanio()*0.9);
 	}
 
 	
