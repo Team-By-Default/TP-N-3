@@ -1,6 +1,6 @@
 package warGame;
 
-public class Caballero extends Unidad {
+public class Caballero extends Unidad implements Bebedor{
 
 	/**
 	 * Cuando recibe 3 ataques el caballo se asuta y se pone rebelde. Mientras esté rebelde el
@@ -30,6 +30,7 @@ public class Caballero extends Unidad {
 	}
 	
 	/**
+	 * Por implementar Bebedor
 	 * tomarAgua() le da una poción de agua al caballo y lo calma, lo saca del estado rebelde
 	 */
 	@Override

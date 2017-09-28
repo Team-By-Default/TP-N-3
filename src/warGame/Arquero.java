@@ -1,6 +1,6 @@
 package warGame;
 
-public class Arquero extends Unidad {
+public class Arquero extends Unidad implements Shooter{
 
 	/**
 	 * La cantidad de flechas que posee el personaje.
@@ -35,8 +35,8 @@ public class Arquero extends Unidad {
 		flechas=20;
 	}
 	
-	//Quiero pasar cargarFlechas() a una interfaz (Vale)
 	/**
+	 * Por implementar Shooter.
 	 * El arquero carga 6 flechas, las cuales vienen en un paquete, y las carga en el carcaj
 	 */
 	public void cargarFlechas() {
