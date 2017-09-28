@@ -10,7 +10,7 @@ public class UnidadConEscudo extends UnidadConItem {
 	 * @param unidad Es la unidad a la que le va a agregar el item
 	 */
 	public UnidadConEscudo(Unidad unidad) {
-		super(unidad);
+		this.miUnidad = unidad;
 	}
 	
 	/**

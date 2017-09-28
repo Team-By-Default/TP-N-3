@@ -9,10 +9,16 @@ public class Lancero extends Unidad {
 	private final static int SALUDTOPE = 150;
 	private final static int DANIO = 25;
 
+	public Lancero() {
+		this.moverA(0,0);
+		this.setSalud(SALUDTOPE);
+		this.setDanio(DANIO);
+	}
+	
 	public Lancero(int x,int y) {
-		super(x,y);
-		this.salud=SALUDTOPE;
-		this.danio=DANIO;
+		this.moverA(x, y);
+		this.setSalud(SALUDTOPE);
+		this.setDanio(DANIO);
 	}
 	
 	/**

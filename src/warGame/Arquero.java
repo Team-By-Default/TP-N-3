@@ -5,24 +5,37 @@ public class Arquero extends Unidad {
 	/**
 	 * La cantidad de flechas que posee el personaje.
 	 */
-	int flechas;
+	private int flechas;
 
 	/**
-	 * Un Arquero tiene, de inicial y tope, 
-	 * una salud de 50 y hace un
-	 * daño de 5.
+	 * Un Arquero tiene, de inicial y tope, una salud de 50 y hace un daño de 5.
 	 */
 	private static final int SALUDTOPE = 50;
 	private static final int DANIO = 5;
 	
-	
-	public Arquero(int x, int y) {
-		super(x,y);
-		this.salud = SALUDTOPE;
-		this.danio = DANIO;
+	/**
+	 * El constructor por defecto lo crea en la posición (0,0)
+	 */
+	public Arquero() {
+		this.moverA(0, 0);
+		this.setSalud(SALUDTOPE);
+		this.setDanio(DANIO);
 		flechas=20;
 	}
 	
+	/**
+	 * Este constructor crea un arquero en la posición especificada (x,y)
+	 * @param x
+	 * @param y
+	 */
+	public Arquero(int x, int y) {
+		this.moverA(x, y);
+		this.setSalud(SALUDTOPE);
+		this.setDanio(DANIO);
+		flechas=20;
+	}
+	
+	//Quiero pasar cargarFlechas() a una interfaz (Vale)
 	/**
 	 * El arquero carga 6 flechas, las cuales vienen en un paquete, y las carga en el carcaj
 	 */
@@ -31,13 +44,12 @@ public class Arquero extends Unidad {
 	}
 	
 	/**
-	 * Al inflingir danio, el arquero debe
-	 * utilizar una flecha.
+	 * Al infringir danio, el arquero debe utilizar una flecha.
 	 * @return El daño realizado
 	 */
 	@Override
 	protected float hacerDanio() {
-		flechas --;
+		this.flechas --;
 		return DANIO;
 	}
 

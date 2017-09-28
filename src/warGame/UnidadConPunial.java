@@ -6,11 +6,11 @@ public class UnidadConPunial extends UnidadConItem {
 	 * @param unidad Es la unidad a la que le va a agregar el item
 	 */
 	public UnidadConPunial(Unidad unidad) {
-		super(unidad);
+		this.miUnidad = unidad;
 	}
+	
 	/**
-	 * El puñal reduce la defensa en 3 puntos, 
-	 * es decir, 
+	 * El puñal reduce la defensa en 3 puntos, es decir, 
 	 * aumenta el ataque enemigo en 3 puntos
 	 * @param danio Es el daño base de la unidad
 	 */

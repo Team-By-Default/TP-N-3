@@ -7,11 +7,32 @@ package warGame;
 public abstract class UnidadConItem extends Unidad {
 
 	protected Unidad miUnidad;
-	
+	/*Es una clase abstracta, no debería ser instanciable
 	public UnidadConItem(Unidad miUnidad){
 		super(0,0);
 	    this.miUnidad = miUnidad;
+	}*/
+	
+	public float getSalud() {
+		return miUnidad.getSalud();
 	}
+	
+	protected void setSalud(float health) {
+		this.miUnidad.setSalud(health);
+	}
+	
+	public float getDanio() {
+		return this.miUnidad.getDanio();
+	}
+	
+	protected void setDanio(float danio) {
+		this.miUnidad.setDanio(danio);
+	}
+	
+	public void moverA(int x, int y) {
+		this.miUnidad.moverA(x, y);
+	}
+	
 	/**
 	 * Se trata de el ataque en cuestion, que usaría el que desarrolle la batalla.
 	 * @param that Es la unidad a la que se ataca
@@ -20,6 +41,7 @@ public abstract class UnidadConItem extends Unidad {
 	public boolean atacar(Unidad that) {
 		return miUnidad.atacar(that);
 	}
+	
 	/**
 	 * Depende de cada unidad, me dice si tengo la posibilidad de atacar
 	 * @param that Es la unidad a la que se ataca
@@ -28,6 +50,7 @@ public abstract class UnidadConItem extends Unidad {
 	protected boolean puedeAtacar(Unidad that) {
 		return miUnidad.puedeAtacar(that);
 	}
+	
 	/**
 	 * Calcula el daño que se entrega al enemigo
 	 * @return El daño en enteros
@@ -35,6 +58,7 @@ public abstract class UnidadConItem extends Unidad {
 	protected float hacerDanio() {
 		return miUnidad.hacerDanio();
 	}
+	
 	/**
 	 * Calcula el daño final recibido por un ataque
 	 * @param danio Es el daño del enemigo
@@ -42,6 +66,7 @@ public abstract class UnidadConItem extends Unidad {
 	protected void recibirDanio(float danio) {
 		miUnidad.recibirDanio(danio);
 	}
+	
 	/**
 	 * Calcula la distancia entre la Unidad y otra Unidad
 	 * @param that Es una Unidad
@@ -50,24 +75,21 @@ public abstract class UnidadConItem extends Unidad {
 	protected double distanciaA(Unidad that) {
 		return miUnidad.distanciaA(that);
 	}
+	
+	//Quiero pasar tomarAgua() a una interfaz Bebedor
 	/**
 	 * Ve los efectos de tomar agua, por defecto, ninguno
 	 */
 	public void tomarAgua() {
 		miUnidad.tomarAgua();
 	}
+	
 	/**
 	 * Nos avisa si nuestra Unidad sigue con vida
 	 * @return true si está vivo, false si está muerto
 	 */
 	public boolean estaVivo() {
 		return miUnidad.estaVivo();
-	}
-	/**
-	 * @return La salud restante en float
-	 */
-	public float getSalud() {
-		return miUnidad.getSalud();
 	}
 
 }
