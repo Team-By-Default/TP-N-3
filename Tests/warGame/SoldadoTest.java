@@ -13,8 +13,8 @@ public class SoldadoTest {
 	@Before
 	public void setUp() {
 		jose = new Soldado (0,0);
-		ronaldo = new Soldado (1,0);
-		lejano = new Soldado (10,10);
+		ronaldo = new Soldado (0,0);
+		lejano = new Soldado (1,0);
 	}
 	
 	/**
@@ -23,27 +23,9 @@ public class SoldadoTest {
 	@Test
 	public void testeandoAtributos() {
 		
-		Assert.assertEquals( 200, jose.salud, 0);
-		Assert.assertEquals( 10, jose.danio, 0);
+		Assert.assertEquals( 200, jose.getSalud(), 0);
 		Assert.assertEquals( 100, jose.getEnergiaTope(), 0);
 		Assert.assertEquals( 100, jose.getEnergia(), 0);
-	}
-
-	@Test
-	public void testeandoHacerDanio() {
-		
-		Assert.assertEquals( 10, jose.hacerDanio(), 0);
-	}
-	
-	/**
-	 * Buscamos ver si el soldado es capaz de atacar a su objetivo
-	 * 
-	 * Cambiar en futuro
-	 */
-	@Test
-	public void testeandoPuedeAtacar() {
-		
-		Assert.assertEquals( true, jose.puedeAtacar(ronaldo));
 	}
 	
 	/**
@@ -65,16 +47,27 @@ public class SoldadoTest {
 	@Test
 	public void testeandoAtacar() {
 		
-		Assert.assertEquals( true, jose.puedeAtacar(ronaldo));
-		jose.atacar(ronaldo);
-		Assert.assertEquals( 40, ronaldo.salud,0);
+		Assert.assertEquals( true, jose.atacar(ronaldo));
+		
+		Assert.assertEquals( 190, ronaldo.getSalud(),0);
+		Assert.assertEquals( 90, jose.getEnergia(),0);
+	}
+	
+	/**
+	 * Buscamos ver si el Soldado reciebe daño
+	 */
+	@Test
+	public void testeandoRecibirDanio() {
+
+			Assert.assertEquals( true, ronaldo.atacar(jose));
+			Assert.assertEquals( 190, jose.getSalud(),0);
 	}
 	
 	/**
 	 * Buscamos ver los limites de la salud del Soldado
 	 */
 	@Test
-	public void testeandoRecibirDanio() {
+	public void testeandoMorir() {
 
 		for(int i = 0; i < 10; i++) {
 			Assert.assertEquals( true, jose.estaVivo());
@@ -96,21 +89,30 @@ public class SoldadoTest {
 	@Test
 	public void testeandoAtacarMuerto() {
 
-		for(int i = 0; i < 10; i++) {
-			Assert.assertEquals( true, jose.estaVivo());
+		for(int i = 0; i < 10; i++)
 			ronaldo.atacar(jose);
-		}
 
 		ronaldo.tomarAgua();
 		
-		for(int i = 0; i < 10; i++) {
-			Assert.assertEquals( true, jose.estaVivo());
+		for(int i = 0; i < 10; i++)
 			ronaldo.atacar(jose);
-		}
-		Assert.assertEquals( false, jose.estaVivo());
 
+		Assert.assertEquals( false, jose.atacar(ronaldo));
+	}
+
+	/**
+	 * Buscamos ver que pasa si toma agua
+	 */
+	@Test
+	public void testeandoTomarAgua() {
+
+		Assert.assertEquals( 100, jose.getEnergia(), 0);
 		jose.atacar(ronaldo);
-		Assert.assertEquals( 200, ronaldo.salud, 0);
+		Assert.assertEquals( 90, jose.getEnergia(), 0);
+		
+		jose.tomarAgua();
+
+		Assert.assertEquals( 100, jose.getEnergia(), 0);
 	}
 
 }
