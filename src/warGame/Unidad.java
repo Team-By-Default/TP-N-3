@@ -59,7 +59,7 @@ public abstract class Unidad {
 	 * @return true si logró atacar, false si no lo logró
 	 */
 	public boolean atacar(Unidad that) {
-		if(this.estaVivo() && this.puedeAtacar(that)) {
+		if(this!=that && this.estaVivo() && this.puedeAtacar(that)) {
 			that.recibirDanio(this.hacerDanio());
 			return true;
 		}
@@ -107,4 +107,17 @@ public abstract class Unidad {
 			return true;
 		return false;
 	}
+	/*                                 Idea: con estos, podemos hacer miUnidad = miUnidad.ponerAlgo();, si se implementa, hay que ver que hacer con Unidad con Item 
+	public Unidad ponerEscudo() {
+		return new UnidadConEscudo(this);
+	}
+	
+	public Unidad ponerCapa() {
+		return new UnidadConCapa(this);
+	}
+	
+	public Unidad ponerPunial() {
+		return new UnidadConPunial(this);
+	}
+	*/
 }

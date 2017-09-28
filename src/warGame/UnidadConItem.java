@@ -39,7 +39,9 @@ public abstract class UnidadConItem extends Unidad implements Bebedor, Shooter {
 	 * @return true si logró atacar, false si no lo logró
 	 */
 	public boolean atacar(Unidad that) {
-		return miUnidad.atacar(that);
+		if(this!=that)
+			return miUnidad.atacar(that);
+		return false;
 	}
 	
 	/**
@@ -90,6 +92,12 @@ public abstract class UnidadConItem extends Unidad implements Bebedor, Shooter {
 			((Shooter) miUnidad).cargarFlechas();
 	}
 	
+	public int getEnergia() {
+		if(miUnidad instanceof Soldado)
+			return ((Soldado)miUnidad).getEnergia();
+		return 0;
+	}
+	
 	/**
 	 * Nos avisa si nuestra Unidad sigue con vida
 	 * @return true si está vivo, false si está muerto
@@ -97,5 +105,4 @@ public abstract class UnidadConItem extends Unidad implements Bebedor, Shooter {
 	public boolean estaVivo() {
 		return miUnidad.estaVivo();
 	}
-
 }

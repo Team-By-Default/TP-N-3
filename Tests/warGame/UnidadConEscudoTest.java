@@ -27,7 +27,8 @@ public class UnidadConEscudoTest {
 
 		Assert.assertEquals(200, alexis.getSalud(),0);
 		Assert.assertEquals(true, alexis.estaVivo());
-
+		Assert.assertEquals(100, ((UnidadConEscudo)alexis).getEnergia());
+		
 		Assert.assertEquals(200, valeria.getSalud(),0);
 		Assert.assertEquals(true, valeria.estaVivo());
 
