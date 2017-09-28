@@ -21,6 +21,6 @@ public class UnidadConEscudoTest {
 	
 	@Test
 	public void testeandoAtributos() {
-		Assert.assetEquals(100,(Soldado)(alexis.getEnergia()));
+		Assert.assertEquals(100,((Soldado)alexis).getEnergia());
 	}
 }

@@ -21,10 +21,5 @@ public class UnidadConEscudo extends UnidadConItem {
 	public void recibirDanio(float danio) {
 		this.miUnidad.recibirDanio((int)(danio*0.4));
 	}
-	
-	public static void main(String args[]) {
-		Unidad alexis =(Unidad)(UnidadConItem) new UnidadConEscudo(new Soldado(0,0));
-		//System.out.println(((Soldado)(Unidad)(UnidadConItem)alexis).getEnergia());
-	}
 
 }
